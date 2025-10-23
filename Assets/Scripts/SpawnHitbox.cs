@@ -7,25 +7,36 @@ public class SpawnHitbox : MonoBehaviour
     public float attackRadius = 1.5f;
     public LayerMask attackLayer;
 
+    private topDownMovement topDown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        topDown = GetComponent<topDownMovement>();
     }
 
     public void Attack(InputAction.CallbackContext ctx)
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position + (Vector3)GetComponent<topDownMovement>().movement, 1.5f, Vector2.zero, 0, attackLayer);
+        if (ctx.ReadValue<float>() == 0) //Released
+            return;
+
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position + (Vector3)GetComponent<topDownMovement>().direction, 1.5f, Vector2.zero, 0, attackLayer);
 
         if (hit)
         {
             Debug.Log(hit.collider.gameObject.name);
+
+            if (hit.collider.TryGetComponent(out Stats targetStats) && TryGetComponent(out Stats playerStats))
+            {
+                float calculatedDamage = playerStats.damage - targetStats.defense;
+                targetStats.currentHealth -= calculatedDamage;
+            }
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position + (Vector3)GetComponent<topDownMovement>().movement, attackRadius);
+        Gizmos.DrawWireSphere(transform.position + (Vector3)GetComponent<topDownMovement>().direction, attackRadius);
     }
 
 }

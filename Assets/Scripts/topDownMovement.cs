@@ -16,7 +16,9 @@ public class topDownMovement : MonoBehaviour
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+
         currentSpeed = walkSpeed;
+        direction = Vector2.down;
     }
 
     // Update is called once per frame
