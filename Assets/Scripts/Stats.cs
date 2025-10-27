@@ -32,11 +32,13 @@ public class Stats : MonoBehaviour
         }
 
         if (currentHealth > maxHealth)
+        {
             currentHealth = maxHealth;
-
+        }
 
         if (currentMana > maxMana)
+        {
             currentMana = maxMana;
-        
+        }
     }
 }

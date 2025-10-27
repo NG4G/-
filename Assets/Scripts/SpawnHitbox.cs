@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class SpawnHitbox : MonoBehaviour
 {
-
+    public float attackDistance;
+    public float knockbackForce = 50;
     public float attackRadius = 1.5f;
     public LayerMask attackLayer;
 
@@ -20,7 +21,9 @@ public class SpawnHitbox : MonoBehaviour
         if (ctx.ReadValue<float>() == 0) //Released
             return;
 
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position + (Vector3)GetComponent<topDownMovement>().direction, 1.5f, Vector2.zero, 0, attackLayer);
+        Vector2 Mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 CirclePos = (Mousepos - (Vector2)transform.position).normalized;
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position + (Vector3)CirclePos * attackDistance, 1.5f, Vector2.zero, 0, attackLayer);
 
         if (hit)
         {
@@ -30,13 +33,16 @@ public class SpawnHitbox : MonoBehaviour
             {
                 float calculatedDamage = playerStats.damage - targetStats.defense;
                 targetStats.currentHealth -= calculatedDamage;
+                GetComponent<Enemy_Knockback>().Knockback(transform, knockbackForce);
             }
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position + (Vector3)GetComponent<topDownMovement>().direction, attackRadius);
+        Vector2 Mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 CirclePos = (Mousepos - (Vector2)transform.position).normalized;
+        Gizmos.DrawWireSphere(transform.position + (Vector3)CirclePos * attackDistance, attackRadius);
     }
 
 }

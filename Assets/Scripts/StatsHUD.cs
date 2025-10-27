@@ -5,14 +5,14 @@ public class StatsHUD : MonoBehaviour
 {
     public Stats stats;
 
-    public Image healthBar;
+    public Image healthbar;
     public Image manaBar;
     
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = stats.currentHealth / stats.maxHealth;
-        manaBar.fillAmount = stats.currentHealth / stats.maxMana;
+        healthbar.fillAmount = stats.currentHealth / stats.maxHealth;
+        manaBar.fillAmount = stats.currentMana / stats.maxMana;
     }
 }
