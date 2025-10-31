@@ -1,7 +1,7 @@
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Shooting1 : MonoBehaviour
 {
 
     private Camera mainCam;
@@ -39,7 +39,7 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(0) && canFire && !Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1) && canFire && !Input.GetMouseButton(0))
         {
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);

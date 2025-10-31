@@ -18,6 +18,8 @@ public class Stats : MonoBehaviour
 
     [Tooltip("whether or not this entity is dead")] public bool isDead;
 
+    [Tooltip("how much healing this entity does on pickkup")] public float healing;
+
     private void Start()
     {
         currentHealth = maxHealth;
