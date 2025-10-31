@@ -7,9 +7,12 @@ public class Hazard : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Stats stats))
+
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent(out Stats stats))
         {
-            stats.currentHealth -= damage;
+          
+             stats.currentHealth -= damage;
+            
         }
     }
 }
