@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Enemy") && collision.gameObject.TryGetComponent(out Stats stats))

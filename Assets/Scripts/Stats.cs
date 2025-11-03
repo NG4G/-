@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Stats : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Stats : MonoBehaviour
 
     [Tooltip("how much healing this entity does on pickkup")] public float healing;
 
+    public UnityEvent OnDied;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -30,6 +33,7 @@ public class Stats : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            OnDied.Invoke();
             Destroy(gameObject);
         }
 

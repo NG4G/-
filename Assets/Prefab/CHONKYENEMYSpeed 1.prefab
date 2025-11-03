@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4904935453440417007}
   - component: {fileID: 8287901215885462265}
   - component: {fileID: 7502027070701996631}
+  - component: {fileID: 5081585156394539203}
   m_Layer: 3
   m_Name: CHONKYENEMYSpeed 1
   m_TagString: Enemy
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _rotationSpeed: 150
+  _rotationSpeed: 200
 --- !u!114 &8333728715876542317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +154,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -221,6 +222,22 @@ MonoBehaviour:
   defense: 0
   currency: 0
   isDead: 0
+  healing: 0
+  OnDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5081585156394539203}
+        m_TargetAssemblyTypeName: EnemyCollectableDrop, Assembly-CSharp
+        m_MethodName: RandomlyDropCollectable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3719580263830016541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,15 +286,15 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: 0, y: 0.11986542, z: 0}
-      m_Extent: {x: 0.41345215, y: 0.35852814, z: 0}
+      m_Center: {x: 0, y: 0.14492035, z: 0}
+      m_Extent: {x: 0.5, y: 0.43358612, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0
     m_FlipX: 0
     m_FlipY: 0
     m_InitialTrim: 0
   m_CastingOption: 1
-  m_PreviousTrimEdge: 0.05
+  m_PreviousTrimEdge: 0
   m_PreviousEdgeProcessing: 1
   m_PreviousShadowCastingSource: 2
   m_PreviousShadowShape2DSource: {fileID: 904661908616896653}
@@ -300,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -1}
+  m_EffectDistance: {x: -5, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!114 &7502027070701996631
 MonoBehaviour:
@@ -354,3 +371,16 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5081585156394539203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999107619366833631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c54751c127c0146aef2c9c542a4294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chanceOfCollectabledrop: 0.1
