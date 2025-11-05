@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8435146970565299262}
   - component: {fileID: -5294983929540081068}
   m_Layer: 0
-  m_Name: Bulletfast
+  m_Name: ShotgunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -65.556595, y: 2.7029185, z: -0.0079780435}
-  m_LocalScale: {x: 0.2, y: 0.19739442, z: 0.7056936}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.25764465, y: 0.25428808, z: 0.90909094}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,13 +98,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4573943926587412391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9356fcf3344902841b2c860035a6c780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10.69
-  bDamage: 1
+  force: 25
+  bDamage: 1.5
 --- !u!50 &7300482845984800845
 Rigidbody2D:
   serializedVersion: 5
