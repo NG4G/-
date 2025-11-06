@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Stats : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Stats : MonoBehaviour
 
     [Tooltip("This entity's currency")] public int currency;
 
-    [Tooltip("whether or not this entity is dead")] public bool isDead;
+    [Tooltip("whether or not this entity is dead")] public bool isDead = false;
 
     [Tooltip("how much healing this entity does on pickkup")] public float healing;
 
@@ -31,10 +32,23 @@ public class Stats : MonoBehaviour
     }
     private void Update()
     {
+
+      //  if (Input.GetButtonDown("Escape"))
+      //  {
+      //      SceneManager.LoadScene("Start");
+      //  }
+
         if (currentHealth <= 0)
         {
             OnDied.Invoke();
+            isDead = true;
             Destroy(gameObject);
+            if (isDead == true && CompareTag("Player")) 
+            {
+                SceneManager.LoadScene("Start");
+            }
+
+            
         }
 
         if (currentHealth > maxHealth)

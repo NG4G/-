@@ -25,6 +25,7 @@ public class topDownMovement : MonoBehaviour
     void Update()
     {
         rb2D.linearVelocity = movement * currentSpeed;
+        
     }
 
     public void Move(InputAction.CallbackContext ctx)

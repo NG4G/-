@@ -29,8 +29,8 @@ public class BulletScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy") && collision.gameObject.TryGetComponent(out Stats stats))
         {
-
-            stats.currentHealth -= bDamage;
+            float calculatedDamage = bDamage -= stats.defense;
+            stats.currentHealth -= calculatedDamage;
             Destroy(gameObject);
         }
 
