@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c47b0155d047c45bb235696e00fd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDsitance: 90.2
+  _playerAwarenessDsitance: 35
 --- !u!60 &675702957001138147
 PolygonCollider2D:
   m_ObjectHideFlags: 0
