@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1948828832851490814}
   - component: {fileID: 5698582547285554484}
   - component: {fileID: 7028360207118775837}
+  - component: {fileID: 4804846380030831901}
   m_Layer: 3
   m_Name: CHONKYENEMY 1 1 (2)
   m_TagString: Enemy
@@ -38,7 +39,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7085936, w: 0.70561683}
   m_LocalPosition: {x: -63.141094, y: 2.0889177, z: 0}
-  m_LocalScale: {x: 2.02, y: 2.02, z: 2.02}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c47b0155d047c45bb235696e00fd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDsitance: 20
+  _playerAwarenessDsitance: 125
 --- !u!60 &5663335894080729860
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -410,3 +411,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killScore: 10
+--- !u!60 &4804846380030831901
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439571935708027511}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 0.5, y: -0.28866667}
+  m_UseDelaunayMesh: 0

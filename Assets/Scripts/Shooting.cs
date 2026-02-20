@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
@@ -11,15 +12,20 @@ public class Shooting : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
 
+    public PlayerInput playerInput;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerInput = transform.parent.GetComponent<PlayerInput>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        var shootAttack  = playerInput.actions["Shoot"];
+
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 rotation = mousePos - transform.position;
@@ -38,7 +44,7 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(0) && canFire && !Input.GetMouseButton(1))
+        if (shootAttack.IsPressed() && shootAttack != null && canFire)
         {
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
