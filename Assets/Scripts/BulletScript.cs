@@ -1,3 +1,6 @@
+using System.Collections;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
@@ -31,6 +34,7 @@ public class BulletScript : MonoBehaviour
         {
             float calculatedDamage = bDamage -= stats.defense;
             stats.currentHealth -= calculatedDamage;
+            collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
             Destroy(gameObject);
         }
 
@@ -40,6 +44,11 @@ public class BulletScript : MonoBehaviour
         }
         
         
+    }
+
+    private IEnumerator Wait()
+    {
+               yield return new WaitForSeconds(0.5f);
     }
     
 
