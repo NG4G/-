@@ -5,19 +5,19 @@ public class Shooting : MonoBehaviour
 {
 
     private Camera mainCam;
-    private Vector3 mousePos;
+    [HideInInspector] private Vector3 mousePos;
     public GameObject bullet;
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
 
-    public PlayerInput playerInput;
+    private PlayerInput playerInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerInput = transform.parent.GetComponent<PlayerInput>();
+        playerInput = transform.parent.parent.GetComponent<PlayerInput>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 

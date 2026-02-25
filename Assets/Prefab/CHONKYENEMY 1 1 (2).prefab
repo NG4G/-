@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 1948828832851490814}
   - component: {fileID: 5698582547285554484}
   - component: {fileID: 7028360207118775837}
-  - component: {fileID: 4804846380030831901}
   m_Layer: 3
   m_Name: CHONKYENEMY 1 1 (2)
   m_TagString: Enemy
@@ -39,7 +38,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7085936, w: 0.70561683}
   m_LocalPosition: {x: -63.141094, y: 2.0889177, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 2.25, y: 2.25, z: 2.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 215716684978020908}
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c47b0155d047c45bb235696e00fd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDsitance: 125
+  _playerAwarenessDsitance: 1000000
 --- !u!60 &5663335894080729860
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -349,8 +348,8 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.759
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_FalloffIntensity: 0.694
+  m_Color: {r: 1, g: 0, b: 0, a: 0.62352943}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 1
@@ -375,7 +374,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 2.54
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -412,56 +411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killScore: 10
---- !u!60 &4804846380030831901
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7439571935708027511}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
 --- !u!1001 &5807151345146964344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,6 +465,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5938352693521664852, guid: 8fc6f94be0d183647be734d6da6e123b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939593819908711834, guid: 8fc6f94be0d183647be734d6da6e123b, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8939593819908711834, guid: 8fc6f94be0d183647be734d6da6e123b, type: 3}

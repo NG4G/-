@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpreadGun : MonoBehaviour
 {
@@ -11,14 +12,18 @@ public class SpreadGun : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shootPosition;
     float shootstartcooldown;
+
+    private PlayerInput playerInput;
     void Start()
     {
-        
+        playerInput = transform.parent.parent.GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        var spreadShoot = playerInput.actions["Shoot"];
+
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(mousePosition.y, mousePosition.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle+ rotationOffset, Vector3.forward);
@@ -26,7 +31,7 @@ public class SpreadGun : MonoBehaviour
         if (shootstartcooldown <= 0)
         {
 
-            if (Input.GetMouseButtonDown(2))
+            if (spreadShoot.IsPressed())
             {
                 Shoot();
                 shootstartcooldown = shootCooldown;

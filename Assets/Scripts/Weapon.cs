@@ -1,8 +1,8 @@
-//using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
-//public class Weapon : MonoBehaviour
-//{
+public class Weapon : MonoBehaviour
+{
  //   private void OnTriggerEnter2D(Collider2D collision)
   //  {
     //    if (hit.collider.TryGetComponent(out Stats targetStats) && TryGetComponent(out Stats playerStats))
@@ -17,4 +17,7 @@
   //  {
         
    // }
-//}
+
+
+}
+

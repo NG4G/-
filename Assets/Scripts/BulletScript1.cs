@@ -2,16 +2,17 @@ using System.Collections;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
-public class BulletScript : MonoBehaviour
+public class BulletScript1 : MonoBehaviour
 {
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
     public float bDamage;
-    
-    
+    public GameObject child;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,7 +34,7 @@ public class BulletScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy") && collision.gameObject.TryGetComponent(out Stats stats))
         {
-            
+            child.transform.parent = null;
             float calculatedDamage = bDamage -= stats.defense;
             stats.currentHealth -= calculatedDamage;
             collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
