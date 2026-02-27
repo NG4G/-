@@ -7,13 +7,13 @@ using UnityEngine.Rendering;
 
 public class topDownMovement : MonoBehaviour
 {
-    [SerializeField] private float walkSpeed;
+    public float walkSpeed;
     [SerializeField] private TrailRenderer tr;
     
     private PlayerInput playerInput;
 
     private Vector2 movement;
-    private float currentSpeed;
+    public float currentSpeed;
     private Rigidbody2D rb2D;
 
     [SerializeField] float dashSpeed = 10f;
