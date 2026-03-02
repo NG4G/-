@@ -8,6 +8,7 @@ public class LastStandSpeed : MonoBehaviour
     public GameObject SpreadGun;
     public GameObject RapidFireGun;
     public GameObject SingleFire;
+    
 
 
     // Update is called once per frame
@@ -19,6 +20,7 @@ public class LastStandSpeed : MonoBehaviour
             SpreadGun.GetComponent<SpreadGun>().shootCooldown = 0.8f;
             RapidFireGun.GetComponent<SpreadGun>().shootCooldown = 0.1f;
             SingleFire.GetComponent<Shooting>().timeBetweenFiring = 0.3f;
+            playerMovement.dashSpeed = 30f;
 
         }
          else
@@ -27,6 +29,7 @@ public class LastStandSpeed : MonoBehaviour
             SpreadGun.GetComponent<SpreadGun>().shootCooldown = 1.25f;
             RapidFireGun.GetComponent<SpreadGun>().shootCooldown = 0.15f;
             SingleFire.GetComponent<Shooting>().timeBetweenFiring = 0.5f;
+            playerMovement.dashSpeed = 25f;
         }
     }
 }

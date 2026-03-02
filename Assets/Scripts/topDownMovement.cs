@@ -16,21 +16,36 @@ public class topDownMovement : MonoBehaviour
     public float currentSpeed;
     private Rigidbody2D rb2D;
 
-    [SerializeField] float dashSpeed = 10f;
+    public float dashSpeed = 10f;
     [SerializeField] float dashDuration = 1f;
     [SerializeField] float dashCooldown = 1f;
     bool isDashing;
     bool canDash;
 
     [HideInInspector] public Vector2 direction;
+    private Collider2D playerCollider;
     void Awake()
     {
         tr = GetComponent<TrailRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
+        playerCollider = GetComponent<PolygonCollider2D>();
         currentSpeed = walkSpeed;
         direction = Vector2.down;
         canDash = true;
+    }
+
+    void FixedUpdate()
+    {
+        if (isDashing == true)
+        {
+            playerCollider.enabled = false;
+        }
+        else
+        {
+            playerCollider.enabled = true;
+        }
+        
     }
 
     // Update is called once per frame
