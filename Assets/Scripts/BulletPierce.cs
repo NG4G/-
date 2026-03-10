@@ -3,15 +3,16 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class BulletPierce : MonoBehaviour
 {
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
     public float bDamage;
-    
-    
+    private int pierceCount = 0;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,11 +21,12 @@ public class BulletScript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
+       Vector3 rotation = transform.position - mousePos;
 
         rb.linearVelocity = new Vector2(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot);
+       transform.rotation = Quaternion.Euler(0, 45, rot);
+      
     }
 
     // Update is called once per frame
@@ -37,10 +39,14 @@ public class BulletScript : MonoBehaviour
             float calculatedDamage = bDamage -= stats.defense;
             stats.currentHealth -= calculatedDamage;
             collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
-            Destroy(gameObject);
+            pierceCount += 1;
         }
 
-        if (collision.gameObject.CompareTag("Terrain"))
+        if (pierceCount >= 2)
+        {
+            Destroy(gameObject);
+        }
+            if (collision.gameObject.CompareTag("Terrain"))
         {
             Destroy(gameObject);
         }

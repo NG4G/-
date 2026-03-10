@@ -12,6 +12,8 @@ public class topDownMovement : MonoBehaviour
     
     private PlayerInput playerInput;
 
+    public Stats stats;
+
     private Vector2 movement;
     public float currentSpeed;
     private Rigidbody2D rb2D;
@@ -23,13 +25,13 @@ public class topDownMovement : MonoBehaviour
     bool canDash;
 
     [HideInInspector] public Vector2 direction;
-    private Collider2D playerCollider;
+    
     void Awake()
     {
         tr = GetComponent<TrailRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
-        playerCollider = GetComponent<PolygonCollider2D>();
+        
         currentSpeed = walkSpeed;
         direction = Vector2.down;
         canDash = true;
@@ -39,13 +41,12 @@ public class topDownMovement : MonoBehaviour
     {
         if (isDashing == true)
         {
-            playerCollider.enabled = false;
+            stats.defense = 2f;
         }
-        else
+        else        
         {
-            playerCollider.enabled = true;
+            stats.defense = 0f;
         }
-        
     }
 
     // Update is called once per frame

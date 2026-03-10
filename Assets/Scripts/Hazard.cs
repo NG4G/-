@@ -10,8 +10,8 @@ public class Hazard : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent(out Stats stats))
         {
-          
-             stats.currentHealth -= damage;
+            float calculatedDamage = damage -= stats.defense;
+            stats.currentHealth -= calculatedDamage;
             
         }
     }

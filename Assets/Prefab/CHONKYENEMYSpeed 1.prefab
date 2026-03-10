@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 904661908616896653}
   - component: {fileID: 4127711638287318384}
   - component: {fileID: 8333728715876542317}
+  - component: {fileID: 4168544121438128408}
   - component: {fileID: 675702957001138147}
   - component: {fileID: 3171975537314247760}
   - component: {fileID: 871291143359885323}
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
-  _rotationSpeed: 200
+  _rotationSpeed: 250
 --- !u!114 &8333728715876542317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +127,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c47b0155d047c45bb235696e00fd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDsitance: 1000000
+  _playerAwarenessDsitance: 100
+--- !u!114 &4168544121438128408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999107619366833631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e67e062b310774fa6cfb13a7e7cc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera1: {fileID: 0}
 --- !u!60 &675702957001138147
 PolygonCollider2D:
   m_ObjectHideFlags: 0

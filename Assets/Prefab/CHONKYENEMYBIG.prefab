@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2853390255748113911}
   - component: {fileID: 1313360457755544396}
   - component: {fileID: 3957124818010144959}
+  - component: {fileID: -100209700053355773}
   - component: {fileID: 5663335894080729860}
   - component: {fileID: 2253026435120489471}
   - component: {fileID: 131457619988211119}
@@ -125,7 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c47b0155d047c45bb235696e00fd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDsitance: 1000000
+  _playerAwarenessDsitance: 100
+--- !u!114 &-100209700053355773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7439571935708027511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e67e062b310774fa6cfb13a7e7cc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera1: {fileID: 0}
 --- !u!60 &5663335894080729860
 PolygonCollider2D:
   m_ObjectHideFlags: 0

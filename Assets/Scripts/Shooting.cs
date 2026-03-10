@@ -47,7 +47,7 @@ public class Shooting : MonoBehaviour
         if (shootAttack.IsPressed() && shootAttack != null && canFire)
         {
             canFire = false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            Instantiate(bullet, bulletTransform.position, bulletTransform.rotation );
         }
     }
 }

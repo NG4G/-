@@ -9,6 +9,11 @@ TagManager:
   - Health
   - Guns
   - Gun
+  - ScreenWarp1
+  - ScreenWarp2
+  - ScreenWarp3
+  - ScreenWarp4
+  - Camera
   layers:
   - Default
   - TransparentFX

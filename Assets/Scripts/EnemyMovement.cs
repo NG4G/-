@@ -1,11 +1,19 @@
 using System.Runtime.InteropServices;
+using UnityEditor.Rendering;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float _speed;
 
+    private float screenWidth;
+    private float screenHeight;
+
     public float _rotationSpeed;
+    private Transform _player;
+    private Camera cam;
+
 
     private Rigidbody2D _rigidbody;
     private PlayerAwarenessScript _playerAwarenessController;
@@ -14,8 +22,13 @@ public class EnemyMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        cam = Camera.main;
+
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerAwarenessController = GetComponent<PlayerAwarenessScript>();
+        _player = FindFirstObjectByType<topDownMovement>().transform;
+        screenHeight = cam.orthographicSize;
+        screenWidth = screenHeight * cam.aspect;
     }
 
     // Update is called once per frame
@@ -28,6 +41,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void UpdateTargetDirection()
     {
+        Vector3 targetPos = _player.transform.position;
+        Vector3 position = transform.position;
+        Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
+
         if (_playerAwarenessController.AwareOfPlayer)
         {
             _targetDirection = _playerAwarenessController.DirectionToPlayer;
@@ -36,7 +53,18 @@ public class EnemyMovement : MonoBehaviour
         {
             _targetDirection = Vector2.zero;
         }
-    }
+
+        if (Mathf.Abs(targetPos.x - position.x) > screenWidth  && _playerAwarenessController.AwareOfPlayer)
+        {
+            _targetDirection.x = -targetPos.x; // Simplified wrap target
+        }
+        if(Mathf.Abs(targetPos.y - position.y) > screenHeight && _playerAwarenessController.AwareOfPlayer)
+        {
+            _targetDirection.y = -targetPos.y; // Simplified wrap target
+        }
+    }        
+        
+    
 
     private void RotateTowardsTarget()
     {

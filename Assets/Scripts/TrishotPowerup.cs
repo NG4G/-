@@ -22,8 +22,8 @@ public class TrishotPowerUp : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision) 
     {
         BaseGunsHolder = collision.gameObject.transform.GetChild(0).gameObject;
-        BoomGun = collision.gameObject.transform.GetChild(2).gameObject;
-        Trishot = collision.gameObject.transform.GetChild(3).gameObject;
+        BoomGun = collision.gameObject.transform.GetChild(3).gameObject;
+        Trishot = collision.gameObject.transform.GetChild(4).gameObject;
         StartCoroutine(PowerupTri());
     }
 
