@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      timer-bomb-cartoon-bomb-with-lit-fuse-GXsz4KDL_t_0: -5906637091974320987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
