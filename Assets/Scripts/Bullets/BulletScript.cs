@@ -10,11 +10,13 @@ public class BulletScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
     public float bDamage;
-    
-    
+    public bool canHitPlayer;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        StartCoroutine(canHitP());
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -45,12 +47,20 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
         
-        
+        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent(out Stats playerStats) && canHitPlayer == true)
+        {
+            float calculatedDamage = bDamage -= playerStats.defense;
+            playerStats.currentHealth -= calculatedDamage;
+            Destroy(gameObject);
+        }
+
     }
 
-    private IEnumerator Wait()
+    private IEnumerator canHitP()
     {
-               yield return new WaitForSeconds(0.5f);
+               yield return new WaitForSeconds(1f);
+               canHitPlayer = true;
+
     }
     
 

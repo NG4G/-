@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8051522421090246695}
   - component: {fileID: 4821816362824320738}
-  - component: {fileID: 2902730410189857128}
   - component: {fileID: 7300482845984800845}
   - component: {fileID: 8435146970565299262}
   - component: {fileID: -5294983929540081068}
-  - component: {fileID: 3255783912909546230}
+  - component: {fileID: -7311257377074725858}
+  - component: {fileID: -1094754177302393455}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BulletRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,20 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2902730410189857128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4573943926587412391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9356fcf3344902841b2c860035a6c780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 25
-  bDamage: 3.5
 --- !u!50 &7300482845984800845
 Rigidbody2D:
   serializedVersion: 5
@@ -235,7 +221,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &3255783912909546230
+--- !u!114 &-7311257377074725858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,3 +234,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera1: {fileID: 0}
+--- !u!114 &-1094754177302393455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573943926587412391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf86e8a119d51440b4278ce04af9eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 10
+  bDamage: 3
+  _rotationSpeed: 50
+  canHitPlayer: 0
+  _targetDirection: {x: 0, y: 0}
