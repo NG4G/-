@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAwarenessScript : MonoBehaviour
+public class BulletAwareness : MonoBehaviour
 {
 
     public bool AwareOfPlayer { get; private set; }
@@ -17,14 +17,14 @@ public class PlayerAwarenessScript : MonoBehaviour
 
     
 
-    private Transform _player;
+    private Vector2 mousePos;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         cam = Camera.main;
-        _player = transform.Find("Player").transform;
+        
         screenHeight = cam.orthographicSize;
         screenWidth = screenHeight * cam.aspect;
 
@@ -33,9 +33,9 @@ public class PlayerAwarenessScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Vector2 enemyToPlayerVector = _player.position - transform.position;
-        Vector3 targetPos = _player.position;
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 enemyToPlayerVector = mousePos - (Vector2)transform.position;
+        Vector3 targetPos = mousePos;
         Vector3 currentPos = transform.position;
 
 

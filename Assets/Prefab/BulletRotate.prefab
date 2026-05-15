@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7300482845984800845}
   - component: {fileID: 8435146970565299262}
   - component: {fileID: -5294983929540081068}
-  - component: {fileID: -7311257377074725858}
-  - component: {fileID: -1094754177302393455}
+  - component: {fileID: 9140258708367943905}
+  - component: {fileID: -6875844764588540798}
+  - component: {fileID: 8989819967819949527}
   m_Layer: 0
   m_Name: BulletRotate
   m_TagString: Untagged
@@ -221,7 +222,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &-7311257377074725858
+--- !u!114 &9140258708367943905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,11 +231,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4573943926587412391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e67e062b310774fa6cfb13a7e7cc87, type: 3}
+  m_Script: {fileID: 11500000, guid: a8dc4110f518891488b7daadc36f35a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera1: {fileID: 0}
---- !u!114 &-1094754177302393455
+  _playerAwarenessDsitance: 100000
+--- !u!114 &-6875844764588540798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,11 +244,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4573943926587412391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf86e8a119d51440b4278ce04af9eed, type: 3}
+  m_Script: {fileID: 11500000, guid: 1de9e59245add2946a778b902d369111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  _speed: 10
+  _rotationSpeed: 100
+--- !u!114 &8989819967819949527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573943926587412391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9356fcf3344902841b2c860035a6c780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
   bDamage: 3
-  _rotationSpeed: 50
   canHitPlayer: 0
-  _targetDirection: {x: 0, y: 0}

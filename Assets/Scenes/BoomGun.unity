@@ -265,6 +265,34 @@ PrefabInstance:
       propertyPath: shootCooldown
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0099996645
+      objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615263908613907236, guid: a75b1659154d74e489598e01d465e69b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1696439307404281661, guid: a75b1659154d74e489598e01d465e69b, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.04
@@ -348,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 6144645225900247182, guid: a75b1659154d74e489598e01d465e69b, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 4573943926587412391, guid: 697f8f1b1f83c004eb18aa616c23c349, type: 3}
+      objectReference: {fileID: 4573943926587412391, guid: 3f80db4efee564d4e9fe2ec804b7e6f4, type: 3}
     - target: {fileID: 6144645225900247182, guid: a75b1659154d74e489598e01d465e69b, type: 3}
       propertyPath: timeBetweenFiring
       value: 0.5
