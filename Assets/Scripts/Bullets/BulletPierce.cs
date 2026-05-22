@@ -16,6 +16,7 @@ public class BulletPierce : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        StartCoroutine(Lifetime());
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -58,8 +59,12 @@ public class BulletPierce : MonoBehaviour
     {
                yield return new WaitForSeconds(0.5f);
     }
-    
 
+    private IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
 
 
 }

@@ -24,7 +24,7 @@ public class PlayerAwarenessScript : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-        _player = transform.Find("Player").transform;
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
         screenHeight = cam.orthographicSize;
         screenWidth = screenHeight * cam.aspect;
 

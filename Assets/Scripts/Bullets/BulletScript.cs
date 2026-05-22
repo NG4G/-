@@ -17,6 +17,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(canHitP());
+        StartCoroutine(Lifetime());
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -62,7 +63,13 @@ public class BulletScript : MonoBehaviour
                canHitPlayer = true;
 
     }
-    
+
+    private IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
+
 
 
 

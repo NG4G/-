@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
-public class BoomPowerUp : MonoBehaviour
+public class TrackingBulletPowerUp : MonoBehaviour
 {
     public GameObject BaseGunsHolder;
     public GameObject BoomGun;
     public GameObject Trishot;
     public GameObject TrackingGun;
-    public float PowerupDuration = 7f;
+    public float PowerupDuration = 10f;
 
      void Update()
     {
@@ -17,9 +17,9 @@ public class BoomPowerUp : MonoBehaviour
         {  
             Destroy(gameObject);
         }
-        if (TrackingGun.activeInHierarchy == true)
+        if (BoomGun.activeInHierarchy == true)
         {  
-                Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -30,15 +30,15 @@ public class BoomPowerUp : MonoBehaviour
         BoomGun = collision.gameObject.transform.GetChild(3).gameObject;
         Trishot = collision.gameObject.transform.GetChild(4).gameObject;
         TrackingGun = collision.gameObject.transform.GetChild(5).gameObject;
-        StartCoroutine(PowerupBOOM());
+        StartCoroutine(PowerupTracking());
     }
 
-    private IEnumerator PowerupBOOM()
+    private IEnumerator PowerupTracking()
     {
         BaseGunsHolder.SetActive(false);
-        BoomGun.SetActive(true);
+        BoomGun.SetActive(false);
         Trishot.SetActive(false);
-        TrackingGun.SetActive(false);
+        TrackingGun.SetActive(true);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<Light2D>().enabled = false;
