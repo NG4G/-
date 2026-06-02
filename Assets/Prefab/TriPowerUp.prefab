@@ -273,4 +273,6 @@ MonoBehaviour:
   BaseGunsHolder: {fileID: 0}
   BoomGun: {fileID: 0}
   Trishot: {fileID: 0}
+  TrackingGun: {fileID: 0}
   PowerupDuration: 6
+  LifeDuration: 11

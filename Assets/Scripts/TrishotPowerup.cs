@@ -10,6 +10,12 @@ public class TrishotPowerUp : MonoBehaviour
     public GameObject Trishot;
     public GameObject TrackingGun;
     public float PowerupDuration = 7f;
+    public float LifeDuration;
+
+    void Start()
+    {
+        StartCoroutine(Lifetime());
+    }
 
     private void Update()
     {
@@ -31,10 +37,12 @@ public class TrishotPowerUp : MonoBehaviour
         Trishot = collision.gameObject.transform.GetChild(4).gameObject;
         TrackingGun = collision.gameObject.transform.GetChild(5).gameObject;
         StartCoroutine(PowerupTri());
+       
     }
 
     private IEnumerator PowerupTri()
     {
+        StopCoroutine(Lifetime());
         BaseGunsHolder.SetActive(false);
         BoomGun.SetActive(false);
         Trishot.SetActive(true);
@@ -49,4 +57,10 @@ public class TrishotPowerUp : MonoBehaviour
         Trishot.SetActive(false);
         Destroy(gameObject);
     }
+    private IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(LifeDuration);
+        Destroy(gameObject);
+    }
 }
+

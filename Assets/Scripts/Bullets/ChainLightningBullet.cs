@@ -3,7 +3,7 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class ChainLightningBullet : MonoBehaviour
 {
     private Vector3 mousePos;
     private Camera mainCam;
@@ -12,6 +12,7 @@ public class BulletScript : MonoBehaviour
     public float bDamage;
     public bool canHitPlayer;
     public float LifetimeDuration;
+    public GameObject chainLightningEffect;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,18 +42,12 @@ public class BulletScript : MonoBehaviour
             float calculatedDamage = bDamage -= stats.defense;
             stats.currentHealth -= calculatedDamage;
             collision.gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            Instantiate(chainLightningEffect, collision.gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Terrain"))
         {
-            Destroy(gameObject);
-        }
-        
-        if(collision.gameObject.CompareTag("Player") && collision.gameObject.TryGetComponent(out Stats playerStats) && canHitPlayer == true)
-        {
-            float calculatedDamage = bDamage -= playerStats.defense;
-            playerStats.currentHealth -= calculatedDamage;
             Destroy(gameObject);
         }
 

@@ -218,9 +218,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7658c55cde8b4264fb95f841ea7e463e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GunsHolder: {fileID: 0}
+  BaseGunsHolder: {fileID: 0}
   BoomGun: {fileID: 0}
+  Trishot: {fileID: 0}
+  TrackingGun: {fileID: 0}
   PowerupDuration: 10
+  LifeDuration: 11
 --- !u!114 &2003982102245974352
 MonoBehaviour:
   m_ObjectHideFlags: 0

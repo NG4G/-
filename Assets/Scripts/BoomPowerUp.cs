@@ -10,8 +10,14 @@ public class BoomPowerUp : MonoBehaviour
     public GameObject Trishot;
     public GameObject TrackingGun;
     public float PowerupDuration = 7f;
+    public float LifeDuration;
 
-     void Update()
+    void Start()
+    {
+        StartCoroutine(Lifetime());
+     
+    }
+    void Update()
     {
         if (Trishot.activeInHierarchy == true)
         {  
@@ -30,7 +36,10 @@ public class BoomPowerUp : MonoBehaviour
         BoomGun = collision.gameObject.transform.GetChild(3).gameObject;
         Trishot = collision.gameObject.transform.GetChild(4).gameObject;
         TrackingGun = collision.gameObject.transform.GetChild(5).gameObject;
+        StopAllCoroutines();
         StartCoroutine(PowerupBOOM());
+        
+
     }
 
     private IEnumerator PowerupBOOM()
@@ -49,4 +58,12 @@ public class BoomPowerUp : MonoBehaviour
         BoomGun.SetActive(false);
         Destroy(gameObject);
     }
+
+    private IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(LifeDuration);
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
 }
+

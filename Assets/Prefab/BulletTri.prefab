@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 30
   bDamage: 2
+  canHitPlayer: 0
+  LifetimeDuration: 5.5
 --- !u!50 &7300482845984800845
 Rigidbody2D:
   serializedVersion: 5
