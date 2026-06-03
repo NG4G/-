@@ -284,7 +284,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.05006229, g: 0, b: 0.39607844, a: 1}
+      maxColor: {r: 0, g: 0.44655728, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4971,5 +4971,5 @@ MonoBehaviour:
   damage: 4
   chainLightningEffect: {fileID: 1531239792006794132}
   beenStruck: {fileID: 4747922902791613211, guid: d36a33efb2d374b41bdfb5a85622e7fd, type: 3}
-  amountToChain: 5
+  amountToChain: 4
   parti: {fileID: 8954168030959015799}

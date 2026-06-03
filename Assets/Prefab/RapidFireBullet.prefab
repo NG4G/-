@@ -107,7 +107,7 @@ MonoBehaviour:
   force: 19
   bDamage: 1.25
   canHitPlayer: 0
-  LifetimeDuration: 0
+  LifetimeDuration: 10
 --- !u!50 &7300482845984800845
 Rigidbody2D:
   serializedVersion: 5

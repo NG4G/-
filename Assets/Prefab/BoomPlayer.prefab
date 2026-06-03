@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3443521151048323294}
   - component: {fileID: 7373397074855853922}
   m_Layer: 0
-  m_Name: PiercePoint (1)
+  m_Name: LightningBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 1346447294531166744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.62, z: 0}
+  m_LocalPosition: {x: 0.009998908, y: 0.62000054, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1639,9 +1639,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2242803509634726451}
-  - {fileID: 3443521151048323294}
   - {fileID: 5021295097766519093}
   - {fileID: 3814108665459797280}
+  - {fileID: 3443521151048323294}
   m_Father: {fileID: 1696439307404281661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3367834167435453834

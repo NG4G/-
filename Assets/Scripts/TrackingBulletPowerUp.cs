@@ -35,14 +35,13 @@ public class TrackingBulletPowerUp : MonoBehaviour
         BoomGun = collision.gameObject.transform.GetChild(3).gameObject;
         Trishot = collision.gameObject.transform.GetChild(4).gameObject;
         TrackingGun = collision.gameObject.transform.GetChild(5).gameObject;
+        StopAllCoroutines();
         StartCoroutine(PowerupTracking());
        
     }
 
     private IEnumerator PowerupTracking()
     {
-        
-        StopCoroutine(Lifetime());
         BaseGunsHolder.SetActive(false);
         BoomGun.SetActive(false);
         Trishot.SetActive(false);
