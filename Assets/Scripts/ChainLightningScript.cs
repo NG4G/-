@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ChainLightningScript : MonoBehaviour
@@ -30,6 +31,8 @@ public class ChainLightningScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        StartCoroutine(DurationTopreventBuildup());
 
         coll = GetComponent<CircleCollider2D>();
 
@@ -85,5 +88,11 @@ public class ChainLightningScript : MonoBehaviour
                 Destroy(gameObject, 1f);
             }
         }     
+    }
+
+    private IEnumerator DurationTopreventBuildup()
+            {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
