@@ -46,6 +46,8 @@ public class gunScrip : MonoBehaviour
                 guns[currentWeaponIndex].SetActive(true);
                 currentGun = guns[currentWeaponIndex];
             }
+
+            
         }
         if (prevGunSwitch.WasPerformedThisFrame())
         {
@@ -55,7 +57,11 @@ public class gunScrip : MonoBehaviour
                 currentWeaponIndex -= 1;
                 guns[currentWeaponIndex].SetActive(true);
                 currentGun = guns[currentWeaponIndex];
+
+
             }
+            
+
         }
     }
 }

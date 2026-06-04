@@ -14,9 +14,6 @@ public class CurrentGunUI : MonoBehaviour
     {
         GunText = GetComponent<TMP_Text>();
         gunHolder = GameObject.Find("GunsHolder").GetComponent<gunScrip>();
-        boomGun = GameObject.Find("Boom Gun");
-        trishot = GameObject.Find("Trishot");
-        trackingGun = GameObject.Find("Tracking Gun");
     }
 
     public void Update()

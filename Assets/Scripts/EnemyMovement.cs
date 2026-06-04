@@ -13,7 +13,13 @@ public class EnemyMovement : MonoBehaviour
     public float _rotationSpeed;
     private Transform _player;
     private Camera cam;
+    private RaycastHit2D[] _obstacleCollisions;
 
+    [SerializeField] private float _obstacleCheckCircleRadius;
+
+    [SerializeField] private float _obstacleCheckDistance;
+
+    [SerializeField] private LayerMask _obstacleLayerMask;
 
     private Rigidbody2D _rigidbody;
     private PlayerAwarenessScript _playerAwarenessController;
@@ -29,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
         _player = FindFirstObjectByType<topDownMovement>().transform;
         screenHeight = cam.orthographicSize;
         screenWidth = screenHeight * cam.aspect;
+        _obstacleCollisions = new RaycastHit2D[10];
     }
 
     // Update is called once per frame
@@ -54,13 +61,15 @@ public class EnemyMovement : MonoBehaviour
             _targetDirection = Vector2.zero;
         }
 
+        //for moving to other side of screen if player is more on one side than the other
+        if (Mathf.Abs(targetPos.x - position.x) > screenWidth  && _playerAwarenessController.AwareOfPlayer)
         if (Mathf.Abs(targetPos.x - position.x) > screenWidth  && _playerAwarenessController.AwareOfPlayer)
         {
-            _targetDirection.x = -targetPos.x; // Simplified wrap target
+            _targetDirection.x = -targetPos.x; 
         }
         if(Mathf.Abs(targetPos.y - position.y) > screenHeight && _playerAwarenessController.AwareOfPlayer)
         {
-            _targetDirection.y = -targetPos.y; // Simplified wrap target
+            _targetDirection.y = -targetPos.y; 
         }
     }        
         
